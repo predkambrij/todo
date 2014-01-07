@@ -1,0 +1,641 @@
+/************************************************************************
+ * This is taskView CSS
+ ************************************************************************/	
+
+/*workbook*/
+div.wbook{
+	background-color    : #f4f4f4;
+}
+
+div.wbookHeader{
+	background-color	: #e2e2e2;
+	height				: 120px;
+}
+
+div.wbookHeader table{
+	margin 				: 25px 0 0 0;
+	width 			 	: 100%; 
+}
+
+div.wbookHeader table td{
+	line-height 		: 32px;  
+}
+
+span.clock{
+    color				: #808080;
+    display				: block;
+    font-size			: 18px;
+    font-weight			: bold;
+    line-height			: 30px;
+    padding				: 23px 0 0;
+    text-align			: center;
+}
+/*wrapper for categories and editor*/
+div.editorWrapper{
+	display 			: block;
+	overflow 			: hidden;
+	clear 				: both; 
+}
+/*left editor*/
+div.details{
+	overflow-y 			: auto;
+	overflow-x 			: hidden;
+	display 			: block;
+    height				: 100%;
+    width 				: 640px; 
+}
+/*right categories*/
+div.categories{
+	display 			: block;
+    height				: 100%;
+    width 				: 150px;
+}
+
+/*sidebar categories styling*/
+div.category{
+	position 			: relative;
+	display 			: block;
+	font-size			: 16px;
+	font-weight			: bold;
+	text-align			: center;
+	line-height			: 85px;
+	padding-top 		: 5px;
+	border-left 		: 2px solid #E2E2E2;
+	width 				: 100%;
+	margin-top			: -17px; 
+	height 				: 75px; 
+	
+	-moz-border-bottom-right-radius				: 20px; 
+	-webkit-border-bottom-right-radius			: 20px; 
+	-khtml-border-bottom-right-radius			: 20px; 
+	border-bottom-right-radius					: 20px;
+}
+
+div.categoryEdge{
+	height 				: 100%;
+	border-left 		: 2px solid #E2E2E2;
+}
+
+/*styling for selected and hovered category*/
+div.category.selectedCategory{
+	border-left			 : none;
+}
+
+div.category.selectedCategory, div.category:hover{
+	color 				 : #000000 !important;
+	background-color 	 : #F4F4F4 !important;
+}
+
+div.category:hover{
+	-webkit-box-shadow	 : 3px 8px 15px 0px rgba(0, 0,0 0, 0.2);
+	-moz-box-shadow	  	 : 3px 8px 15px 0px rgba(0, 0,0 0, 0.2);
+	box-shadow 		  	 : 3px 8px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+div.categoryAdd{
+	background-color 	 : #CAE192; 
+}
+
+div.categoryAdd span.icon{
+	background-image	 : url(../img/icons000000.png); 	
+}
+
+div.categoryAdd span{
+	margin 				 : 27px 57px; 
+}
+
+div.details span.title, input.title{
+    display 			 : block;
+    font-size 			 : 20px;
+    font-weight 		 : bold;
+    margin 			 	 : 15px 20px;
+}
+input.title{
+    border 				 : none;
+    background 			 : none; 
+    width 				 : 100%;
+}
+
+input:hover{
+	text-decoration 	 : underline;
+}
+
+.completed{
+	color 				 : #808080;
+	text-decoration 	 : line-through;
+}
+
+/*this component is hidden by default*/
+div.information{
+	text-align 			 : center;
+	width 				 : 100%;
+	font-size 			 : 14px;
+	display 			 : none;
+	padding 			 : 3px;
+	color 				 : #000000;
+	background-color 	 : #f7fdb2;
+}
+
+.content{
+	font-size			 : 14px;
+	padding 			 : 100px 30px;
+}
+
+/************************************************************************
+ * Popup and dimmer styling
+ ************************************************************************/
+
+div.dimmer{
+	position 			 : fixed;
+	top 				 : 0;
+	bottom 				 : 0;
+	width 				 : 100%;
+	height 				 : 100%;
+	z-index				 : 1000; 
+	display 			 : block;
+	background-color 	 : rgba(255,255,255,0.8);   
+}
+
+.popup{
+	opacity 			 : 1;
+	width 				 : 400px;
+	min-height 			 : 200px;
+	z-index				 : 1100;
+	display 			 : block;
+	background-color 	 : #f4f4f4;
+}
+
+div.popup span.title{
+	background-color	 : #e2e2e2;
+    display 			 : block;
+    font-size 			 : 16px;
+    font-weight 		 : bold;
+    padding 			 : 10px;
+}
+
+div.popup table{
+	margin  			 : 15px 0px;
+	width 				 : 100%; 	
+}
+
+div.popup table td{
+	font-size 			: 14px;
+    font-weight 		: bold;
+    color 				: #808080;
+	padding 			: 0 25px;
+	line-height 		: 35px;  
+}
+
+div.popup table td span{
+	font-size 			: 14px;
+    font-weight 		: bold;
+    color 				: #000;
+}
+
+div.popup table td span:hover{
+	text-decoration 	: underline; 
+}
+
+table.newCategory tr:last-child td, table.newTask tr:last-child td{
+	text-align 			: center;  
+}
+
+div.popup button.button{
+	font-size 			: 14px;
+	color 				: #000000;  
+}
+
+input#newDateStart, input#newDateEnd{
+	width 				: 100px; 
+}
+
+input#newTimeStart, input#newTimeEnd{
+	width 				: 40px; 
+	margin-left 		: 10px; 
+}
+
+/************************************************************************
+ * Header of taskView styling
+ ************************************************************************/
+
+ul.headerIcons{
+	list-style 			: none;
+	margin-left 		: 25px; 
+/*	display 			: block; */
+}
+
+ul.headerIcons li{
+	display 			: inline; 
+}
+
+ul.headerIcons li span{
+	margin 				: 0px 7px;
+}
+
+td.search{
+	font-size 			: 14px;
+	font-weight 		: bold;
+	padding 			: 7px 25px 0 0;
+	color 				: #808080;
+	text-align 			: right;
+}
+
+input.taskSearch{
+	font-size 			: 14px;
+	font-weight 		: bold;
+	color 				: #000000; 
+	padding 			: 2px 10px;
+	width 				: 180px;
+	border 				: none;
+	background 			: none;
+	border-bottom 		: 2px solid #808080;
+}
+
+/************************************************************************
+ * Date, time picker, dropdowns and colorpicker styling 
+ ************************************************************************/
+
+/*datepicker*/
+.ui-datepicker-prev{ 
+	float: left;
+}
+
+.ui-datepicker-next{ 
+	float: right;
+}
+
+div.ui-datepicker-title{
+	text-align: center;
+/*	display: block;*/
+} 
+
+table.ui-datepicker-calendar td{
+	text-align 	: right;
+	padding: 0px 3px;
+	margin: 2px 3px;
+}
+
+table.ui-datepicker-calendar td a{
+	text-decoration: none;
+	color : #808080;
+	font-size: 14px;
+}
+
+div.ui-datepicker-title{
+	font-weight: bold;
+	line-height: 20px;
+}
+
+div.ui-datepicker{
+	padding: 3px;
+}
+
+/*time picker*/
+div.timepicker ul{
+	display: block;
+	float : left;
+	padding: 2px;
+}
+
+div.timepicker ul.hours{
+	border-right  : 1px solid #808080;
+}
+
+/*dropdown*/
+div.dropdown li{
+	
+	display: block;
+	/*min-width: 100px;*/
+	padding: 3px 7px; 	
+	font-size: 14px;
+}
+
+div.dropdown li:last-child{
+	-moz-border-bottom-left-radius		: 5px; 
+	-webkit-border-bottom-left-radius	: 5px; 
+	-khtml-border-bottom-left-radius	: 5px; 
+	border-bottom-left-radius			: 5px;
+	-moz-border-bottom-right-radius		: 5px; 
+	-webkit-border-bottom-right-radius	: 5px; 
+	-khtml-border-bottom-right-radius	: 5px; 
+	border-bottom-right-radius			: 5px;
+}
+
+/*dropdowns time/date pickers*/
+div.timepicker, div.ui-datepicker, div.dropdown{
+	position 			 : absolute;
+	margin-left 		 : 1px;
+	background-color 	 : #e2e2e2;
+	border 				 : 1px solid #808080;
+	border-top-width 	 : 3px;
+	outline 			 : none;
+	z-index 			 : 1500; 
+}
+
+table.ui-datepicker-calendar td:hover, div.dropdown li:hover{
+	color 				 : #000 !important;
+	background-color	 : #f4f4f4;
+}
+
+div.colorpicker{
+	display 			 : block;
+	width   			 : 195px;
+	background-color 	 : #F4F4F4;
+	z-index 			 : 1500;
+}
+
+/*placeholder for color*/
+span.color{
+	display 			 : block;
+	width   			 : 30px;
+	height  			 : 30px;
+	background-color 	 : #000000;
+}
+
+input.color{
+	border : none;
+}
+
+/************************************************************************
+ * Editor for notes and bottom yellow paper styling
+ ************************************************************************/
+
+div.notesScroll{
+	overflow-x 			 : hidden;
+	overflow-y 			 : auto;  
+}
+
+div.notesWrapper{
+	margin 				 : 10px 60px;
+	display 			 : block;
+	height 				 : 200px; 
+}
+
+textarea.notesEditor{
+	resize 				 : none;
+	overflow 			 : hidden;
+	padding  			 : 0px 10px;
+	line-height 		 : 46px;
+	font-size 			 : 16px;
+	width 				 : 100%;
+	height				 : 100%;
+	background 			 : transparent url(../img/line.png) repeat scroll  0 0;
+	border 		         : none !important;
+}
+
+div.taskDetails{
+	display 			 : block;
+	height 				 : 250px;
+	background-color 	 : #F7FDB2;
+	
+	-webkit-box-shadow   : 0px -8px 20px -2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow 	 : 0px -8px 20px -2px rgba(0, 0, 0, 0.2);
+	box-shadow 			 : 0px -8px 20px -2px rgba(0, 0, 0, 0.2);
+}
+
+div.taskDetails div.title{
+	display 			 : block;
+	background-color 	 : #DEE4A0;
+	font-size 			 : 20px;
+	font-weight 		 : bold;
+	padding 		  	 : 15px 20px;
+}
+
+div.taskDetailsContent{
+	margin 			  	 : 15px 20px;
+}
+
+div.taskDetailsContent table{
+	width 				 : 100%; 
+}
+
+div.taskDetailsContent table td{
+/*	padding 			 : 10px 10px; */
+	line-height 		 : 30px;
+	color 				 : #808080;
+	font-weight 		 : bold;
+	font-size 			 : 16px;  
+	white-space 		 : nowrap; 
+}
+
+div.taskDetailsContent table td span{
+	padding 			 : 10px 0px; 
+	color 				 : #000000;
+	font-weight 		 : bold;
+	font-size 			 : 16px;  
+}
+
+div.taskDetails input{
+	line-height 		 : 30px;
+	margin : 0 0;
+	padding : 0 0;
+	background: none;
+	border : none;
+	vertical-align: middle;
+	width:  100px;
+	font-weight: bold;
+	font-size: 16px
+}
+
+div.details td span:hover{
+	text-decoration 	 : underline;
+}
+
+.verticalSpace{
+	height 				 : 25px;
+}
+
+/************************************************************************
+ * Settings styling
+ ************************************************************************/
+
+table.inputTable{
+	margin 				: 10px 30px;
+}
+
+table.inputTable td{
+	line-height 		: 40px;
+	font-size 			: 14px;
+	font-weight 		: bold;
+	padding				: 0px 20px; 
+}
+
+table.inputTable td.title{
+	line-height 		: 40px;
+	font-size 			: 16px;
+	padding 			: 0px 0px;
+}
+
+table.inputTable td.button{
+	text-align 			: center;   
+}
+
+span.categoryColor{
+	width 				: 30px;
+	height 				: 30px;
+	display				: block;
+}
+
+td.name input{
+	font-size 			: 14px;
+	color 				: #000;
+	border 				: none; 
+}
+
+div.popup td.informationText{
+	color				: #000;
+	font-size 			: 12px; 
+}
+
+table.moveTask td{
+	text-align 			: center;
+}
+
+/************************************************************************
+ * Datatable styling
+ ************************************************************************/
+
+div.dataTables_wrapper{
+	margin 				 : 10px 30px;
+}
+
+table.datatable{
+	width 				 : 100%;
+	text-align 			 : right;
+ 	font-size 			 : 14px; 
+}
+
+table.datatable td, table.datatable th{
+	vertical-align 		 : middle;
+	line-height			 : 40px; 
+	font-size 			 : 14px;
+	font-weight 		 : bold;  
+}
+
+table.datatable td.task:hover{
+	cursor 				 : pointer;
+	text-decoration 	 : underline;
+}
+
+table.datatable td.task.completed{
+	color 				 : #808080;
+	text-decoration 	 : line-through;
+}
+
+table.datatable th{
+	font-weight  		 : bold;   
+	padding-right		 : 20px;
+}
+
+table.datatable th:hover{
+/*	text-shadow	         : 0px 1px 5px rgba(130, 130, 255, 1);  */
+}
+
+table.datatable td.date, table.datatable th.date{
+	text-align 			 : right;  
+}
+
+table.datatable th.date{
+	background-position  : left;
+}
+
+table.datatable td.dataTables_empty{
+	text-align 			 : center; 
+}
+
+table.datatable td.icon{
+	border-bottom		 : none;
+	vertical-align		 : middle;
+	padding 			 : 0 0 0 25px;  
+}
+
+table.datatable td.group{
+	border-bottom		 : none;
+	line-height			 : 45px; 
+	text-align 			 : left;
+	font-size 			 : 16px;
+	font-weight 		 : bold;
+}
+
+table.datatable th.sorting:hover{
+	background 			 : transparent url(../img/sort_both.png) no-repeat center right;
+}
+
+table.datatable th.sorting_asc:hover{
+	background 			 : transparent url(../img/sort_asc.png) no-repeat center right;
+}
+
+table.datatable th.sorting_desc:hover{
+	background 			 : transparent url(../img/sort_desc.png) no-repeat center right;
+}
+
+.DTTT_container{
+	float 				 : right;
+}
+
+.DTTT_button{
+	background 			 : transparent url(../img/icons808080.png) no-repeat left top;
+	width				 : 32px;
+	height				 : 32px;
+	display				 : inline;
+	border 				 : none;
+}
+
+.DTTT_button_xls_hover, .DTTT_button_csv_hover, .DTTT_button_pdf_hover{
+	background 			 : transparent url(../img/icons000000.png) no-repeat left top;
+}
+
+.DTTT_button_xls, .DTTT_button_xls_hover{
+	background-position	 : 0px -96px; 
+}
+
+.DTTT_button_csv, .DTTT_button_csv_hover{
+	background-position	 : -32px -96px; 
+}
+
+.DTTT_button_pdf, .DTTT_button_pdf_hover{
+	background-position	 : -64px -96px; 
+}
+
+div.clear{
+	clear 				 : both;
+}
+/************************************************************************
+ * Farbtastic Color Picker 1.2
+ ************************************************************************/
+
+.farbtastic {
+  position: relative;
+}
+.farbtastic * {
+  position: absolute;
+  cursor: crosshair;
+}
+.farbtastic, .farbtastic .wheel {
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .color, .farbtastic .overlay {
+  top: 47px;
+  left: 47px;
+  width: 101px;
+  height: 101px;
+}
+.farbtastic .wheel {
+  background: url(../img/wheel.png) no-repeat;
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .overlay {
+  background: url(../img/mask.png) no-repeat;
+}
+.farbtastic .marker {
+  width: 17px;
+  height: 17px;
+  margin: -8px 0 0 -8px;
+  overflow: hidden; 
+  background: url(../img/marker.png) no-repeat;
+}
+
+
+
