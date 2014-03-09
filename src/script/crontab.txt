@@ -1,0 +1,3 @@
+*/5 * * * * root /usr/bin/php /var/www/todo_blatnik_org_git/src/script/send_reminders.php >> /var/log/todo_reminders 2>&1
+*/5 * * * * www-data /usr/bin/php /var/www/todo_blatnik_org_git/src/script/periodic_tasks.php >> /var/log/todo_periodic 2>&1
+

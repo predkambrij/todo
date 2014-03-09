@@ -83,7 +83,7 @@
 	if(mysql_num_rows($result)) {
 		while($task = mysql_fetch_assoc($result)) {
 			if($task["remindered_email"] == "0" && $task["reminder_email"] != "-1" && 
-				($diff=timeDiff($task["due_date"])) >= 0 && abs($diff-(int)$task["reminder_email"]) <= 5) {
+				($diff=timeDiff($task["start_date"])) >= 0 && abs($diff-(int)$task["reminder_email"]) <= 5) {
 				if(sendEmail($task, $database)) {
 					echo $task["title"].": E-mail sent. ";
 					$update = "UPDATE ".TBL_TASK." ".
@@ -94,14 +94,19 @@
 			}
 			
 			if($task["remindered_sms"] == "0" && $task["reminder_sms"] != "-1" &&
-				 ($diff=timeDiff($task["due_date"])) >= 0 && abs($diff-(int)$task["reminder_sms"]) <= 5) {
-				if(sendSMS($task, $database)) {
+				 ($diff=timeDiff($task["start_date"])) >= 0 && abs($diff-(int)$task["reminder_sms"]) <= 5) {
+				$ret =  exec("/bin/bash /var/www/najdismsgw/send_sms.sh \"". $task["title"]. "\"");
+				//if(sendSMS($task, $database)) {
+				//if($ret == "True") {
 					echo $task["title"].": SMS sent. ";
 					$update = "UPDATE ".TBL_TASK." ".
 				              "SET remindered_sms=1 ".
 						      "WHERE ID_task=".(int)$task["ID_task"];
 					echo "DB update: ".$database->query($update)."\n";
-				}
+				//} else {
+				//	echo "Sending SMS FAILED! Response:";
+				//	echo $ret;
+				//}
 			}
 		}
 	}
