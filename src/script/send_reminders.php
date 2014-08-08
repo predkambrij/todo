@@ -1,6 +1,7 @@
 #!/usr/bin/php
 <?php
 	include(__DIR__ . "/../web/php/include/db.php");
+	include(__DIR__ . "/twilio-php-master/Services/Twilio.php");
 	
 	function timeDiff($dueDate) {
 		$due = strtotime($dueDate);
@@ -95,7 +96,21 @@
 			
 			if($task["remindered_sms"] == "0" && $task["reminder_sms"] != "-1" &&
 				 ($diff=timeDiff($task["start_date"])) >= 0 && abs($diff-(int)$task["reminder_sms"]) <= 5) {
-				$ret =  exec("/bin/bash /var/www/najdismsgw/send_sms.sh \"". $task["title"]. "\"");
+				#$ret =  exec("/bin/bash /var/www/najdismsgw/send_sms.sh \"". $task["title"]. "\"");
+                                $client = new Services_Twilio($AccountSid, $AuthToken);
+
+
+				try {
+				    $message = $client->account->messages->create(array(
+				        "From" => "$twilio_from",
+				        "To" => "$twilio_to",
+				        "Body" =>"\n.\n.\n". $task["title"]. "",
+				    ));
+				    echo "SMS successfuly sent";
+				} catch (Services_Twilio_RestException $e) {
+				    echo "SMS error: ".$e->getMessage();
+				}
+
 				//if(sendSMS($task, $database)) {
 				//if($ret == "True") {
 					echo $task["title"].": SMS sent. ";
