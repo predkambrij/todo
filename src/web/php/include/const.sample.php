@@ -15,10 +15,17 @@
  * correct.
  */
 define("DB_SERVER", "localhost");
-define("DB_USER", "tpo");
-//define("DB_PASS", "yKKsvpRshcEy44N7");
-define("DB_PASS", "tpo");
-define("DB_NAME", "tpo");
+define("DB_USER", "...");
+define("DB_PASS", "...");
+define("DB_NAME", "..");
+
+// set your AccountSid and AuthToken from www.twilio.com/user/account
+$AccountSid = "";
+$AuthToken = "";
+
+# get twilio phone number with messaging capability https://www.twilio.com/user/account/phone-numbers/incoming
+$twilio_from = "";
+$twilio_to = "";
 
 /**
  * Database Table Constants - these constants
@@ -48,8 +55,7 @@ define("COOKIE_PATH", "/");  // Avaible in whole domain
  * welcome email to newly registered users.
  */
 define("EMAIL_FROM_NAME", "TODO.si");
-// define("EMAIL_FROM_ADDR", "no-reply@todo.si");
-define("EMAIL_FROM_ADDR", "no-reply@blatnik.org");
+define("EMAIL_FROM_ADDR", "no-reply@todo.si");
 define("EMAIL_WELCOME", true);
 
 /**
