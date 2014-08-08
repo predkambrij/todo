@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?
 include(__DIR__ . "/../web/php/include/db.php");
 include(__DIR__ . "/twilio-php-master/Services/Twilio.php");
